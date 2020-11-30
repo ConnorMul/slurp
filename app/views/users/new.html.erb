@@ -1,0 +1,24 @@
+<h1>Lets make some Cocktails!</h1>
+<h2>Please provide us with some info</h2>
+<h2>so we can create your account!</h2>
+    
+    <%= form_for @user do |f| %>
+        <label>Username</label>
+        <%= f.text_field :name %>
+        <br>
+        <br>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <br>
+        <br>
+        <label>Confirm Password</label>
+        <%= f.password_field :password_confirmation %>
+        <br>
+        <br>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <br>
+        <br>
+    <%= f.submit %>
+<% end %>
+       
