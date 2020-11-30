@@ -1,0 +1,2 @@
+class AddCocktailToKitchensController < ApplicationController
+end
