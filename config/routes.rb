@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   resources :cocktails
   resources :users
   resources :reviews
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root 'cocktails#search'
+ 
+  delete 'sessions/logout', to: 'sessions#logout', as: 'logout'
+  get "/login", to: 'sessions#new', as: 'new_login'
+  post '/sessions/login', to: 'sessions#login', as: 'login'
+  get '/search', to: 'cocktails#search', :as => 'search_page'
 end

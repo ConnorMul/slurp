@@ -15,7 +15,7 @@
 end
 
 10.times do
-    User.create(name: Faker::Internet.username, password: 'pass123', email: Faker::Internet.email)
+    User.create(name: Faker::Internet.username, password: 'pass123', email: Faker::Internet.email, age: rand(21..105))
 end
 
 60.times do
