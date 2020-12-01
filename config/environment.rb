@@ -4,19 +4,19 @@ require_relative 'application'
 # Initialize the Rails application.
 Rails.application.initialize!
 
-require 'uri'
-require 'net/http'
-require 'openssl'
-
-url = URI("https://the-cocktail-db.p.rapidapi.com/search.php")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Get.new(url)
-request["x-rapidapi-key"] = '1a53f7da9bmsh55c76e76c5b5770p187d7fjsn910a9b05df55'
-request["x-rapidapi-host"] = 'the-cocktail-db.p.rapidapi.com'
-
-response = http.request(request)
-puts response.read_body
+# def request_api(url)
+#     response = Excon.get(
+#       url,
+#       headers: {
+#         'X-RapidAPI-Host' => URI.parse(url).host,
+#         'X-RapidAPI-Key' => ENV.fetch('1')
+#       }
+#     )
+#     return nil if response.status != 200
+#     JSON.parse(response.body)
+#   end
+#   def find_cocktail(name)
+#     request_api(
+#       "www.thecocktaildb.com/api/json/v1/1/search.php?s=#{name}"
+#     )
+#   end

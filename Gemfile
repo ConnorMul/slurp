@@ -62,3 +62,5 @@ gem 'jquery-rails'
 gem 'httparty'
 
 gem 'faker'
+
+gem "shaken_not_stirred", "~> 0.0.7"

@@ -1,10 +1,10 @@
 class CocktailsController < ApplicationController
-    
+
     def index
         @cocktails = Cocktail.all
     end
-    
-    
+
+
     def show
         @cocktail = Cocktail.find(params[:id])
         if current_user
@@ -17,7 +17,7 @@ class CocktailsController < ApplicationController
     end
 
     private
-    
+
     # def request_api(url)
     #   response = Excon.get(
     #     url,
@@ -29,9 +29,9 @@ class CocktailsController < ApplicationController
     #   return nil if response.status != 200
     #   JSON.parse(response.body)
     # end
-    # def find_country(name)
+    # def find_cocktail(name)
     #   request_api(
-    #     "https://restcountries-v1.p.rapidapi.com/name/#{URI.encode(name)}"
+    #     "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=#{URI.encode(name)}"
     #   )
     # end
 end
