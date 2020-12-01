@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     end
 
     def index
+        @users = User.all
     end
 
     def new
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
         end
     end
 
-    def edit #show edit form and get the new values
+    def edit
         @user = User.find(current_user.id)
     end
 
