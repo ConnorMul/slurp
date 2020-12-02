@@ -64,3 +64,5 @@ gem 'httparty'
 gem 'faker'
 
 gem "shaken_not_stirred", "~> 0.0.7"
+
+gem "bulma-rails", "~> 0.9.1"
