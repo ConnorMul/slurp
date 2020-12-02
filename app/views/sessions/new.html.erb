@@ -14,8 +14,10 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div column is-5-tablet is-4-desktop is-3-widescreen>
-                        
-                        <form action="POST" class="box" url=u>
+                       <% if flash[:errors] %>
+                        <%= flash[:errors] %>
+                        <% end %>
+                        <form action='/users' class="box" method='post'>
                             <h3 class="title is-3">Login</h3>
                             
                             <div class="field">

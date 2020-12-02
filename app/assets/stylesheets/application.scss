@@ -1,2 +1,40 @@
 @import "bootstrap/scss/bootstrap";
-@import "bulma";
+// @import "bulma";
+
+// body {
+//     /* background-image: url("https://i.pinimg.com/originals/2c/37/53/2c37538ad1d9a09852c9ec8638c5fa8b.png");
+//     background-repeat: no-repeat;
+//     background-size: cover; */
+ 
+//     background-color: rgba(150, 250, 237, 0.4)
+//   }
+ 
+.index-container {
+    max-height: 100vh;
+    overflow: scroll;
+    display: flex;
+    flex-flow: row wrap;
+    // padding: 0px 0px 0px 0px;
+    margin: 0px auto;
+    border-radius: 25px; 
+    justify-content: space-evenly;
+  }
+  
+  .index-tile {
+    background-color: rgba(207, 124, 233, 0.404);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px; 
+  }
+  
+  .index-tile:hover {
+    border: 3px solid rgb(95, 12, 121); 
+    background-color: rgba(130, 22, 163, 0.2);
+  }
+  
+  .index-tile h3 a {
+    text-decoration: none;
+    color: rgb(62, 7, 79);
+    font-weight: 1200;
+  }

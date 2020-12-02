@@ -1,6 +1,14 @@
-<h1> Beers </h1>
 
-<% @cocktails.each do |ct| %>
-    <p><%= link_to ct.drink, cocktail_path(ct) %></p>
-<% end %>
+<div class='index-container'>
+    <% @cocktails.each do |ct| %>
+        <div class='index-tile'>
+        <p><%= link_to ct.drink, cocktail_path(ct) %></p>
+        <% if @current_user %>
+        <p><%= button_to "Add Drink to your Kitchen", cocktail_path(ct) %></p>
+        <% else %>
+        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>
+        <% end %>
+        </div>
+    <% end %>
+</div>
 
