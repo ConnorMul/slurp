@@ -35,7 +35,7 @@
         <div class="navbar-end">
           <a href="/cocktails" class="navbar-item">Home</a>
           <% if @current_user %>
-          <a href="" class="navbar-item">My Kitchen</a>
+          <%= link_to @current_user.name, @current_user.kitchen %>
           <li class="right"><%= link_to "Logout", logout_path, method: :delete  %></li>
           <% else %>
           <a href="/users/new" class="navbar-item">Signup</a>

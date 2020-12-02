@@ -18,6 +18,9 @@ class CocktailsController < ApplicationController
         @cocktail = Cocktail.find(params[:id])
     end
 
+    def update
+    end
+
     private
 
     # def request_api(url)

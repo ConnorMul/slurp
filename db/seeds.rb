@@ -10,11 +10,11 @@
 # Review.destroy_all
 # AddCocktailToKitchen.destroy_all
 
-50.times do 
+50.times do
     Cocktail.create(drink: Faker::Beer.name, alcohol_percentage: Faker::Beer.alcohol, description: Faker::Beer.style)
 end
 
-10.times do
+15.times do
     User.create(name: Faker::Internet.username, password: 'pass123', email: Faker::Internet.email, age: rand(21..105))
 end
 
@@ -22,9 +22,6 @@ end
     Review.create(content: Faker::Hipster.sentence, stars: rand(1..5), user: User.all.sample, cocktail: Cocktail.all.sample)
 end
 
-50.times do
-    AddCocktailToKitchen.new(cocktail: Cocktail.all.sample, kitchen: Kitchen.all.sample)
-end
 
 
 

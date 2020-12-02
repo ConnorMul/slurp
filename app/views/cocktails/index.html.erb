@@ -4,9 +4,13 @@
         <div class='index-tile'>
         <p><%= link_to ct.drink, cocktail_path(ct) %></p>
         <% if @current_user %>
-        <p><%= button_to "Add Drink to your Kitchen", cocktail_path(ct) %></p>
+         <%= form_for @current_user.kitchen do |f| %>
+                <%= f.hidden_field(:cocktail, value: ct) %>
+                <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
+                <%= f.submit "Add to your Kitchen", class: "btn btn-primary" %>
+        <% end %>
         <% else %>
-        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>
+        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path %></p>
         <% end %>
         </div>
     <% end %>

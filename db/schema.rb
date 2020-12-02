@@ -25,8 +25,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_203126) do
     t.string "drink"
     t.string "alcohol_percentage"
     t.text "description"
+    t.integer "kitchen_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["kitchen_id"], name: "index_cocktails_on_kitchen_id"
   end
 
   create_table "kitchens", force: :cascade do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_203126) do
 
   add_foreign_key "add_cocktail_to_kitchens", "cocktails"
   add_foreign_key "add_cocktail_to_kitchens", "kitchens"
+  add_foreign_key "cocktails", "kitchens"
   add_foreign_key "kitchens", "users"
   add_foreign_key "reviews", "cocktails"
   add_foreign_key "reviews", "users"

@@ -1,5 +1,17 @@
 <h3>Search Result</h3>  
 
-    <% @results.each do |result| %>  
-        <%= link_to result.drink, cocktail_path(result) %><br>  
+   <div class='index-container'>
+    <% @results.each do |result| %>
+        <div class='index-tile'>
+        <p><%= link_to result.drink, cocktail_path(result) %></p>
+        <% if @current_user %>
+            <%= form_for result do |f| %>
+                <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
+                <%= f.submit "Add to your Kitchen", class: "btn btn-primary" %>
+            <% end %>
+        <% else %>
+        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>
+        <% end %>
+        </div>
     <% end %>
+</div>

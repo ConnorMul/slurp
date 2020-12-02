@@ -13,15 +13,15 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.find_by(name: params[:session][:name])
-        user = user.try(:authenticate, params[:session][:password])
+        user = User.create(user_params)
 
-        if user && user.authenticate(params[:session][:password])
-            session[:user_id] = user.id 
-            redirect_to user_path(user)
+        if user.valid?
+            session[:user_id] = user.id
+            Kitchen.create(user: user)
+            redirect_to kitchen_path(user.kitchen)
         else
-            flash[:errors] = "Username or Password are incorrect"
-            redirect_to new_login_path
+            flash[:errors] = user.errors.full_messages
+            redirect_to new_signup_path
         end
     end
 
