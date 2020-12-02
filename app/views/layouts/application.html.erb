@@ -22,11 +22,25 @@
           <span></span>
         </a>
       </div>
+      <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left', action: '/search') do %>
+      <div class="input-group">
+      <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+      <div class="input-group-btn">
+      <%= button_tag "FindBrew", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>
+  </div>
+<% end %>
   
       <div class="navbar-menu" id="nav-links">
         <div class="navbar-end">
-          <a href="class="navbar-item">Home</a>
-          <a class="navbar-item">Login/Signup</a>
+          <a href="/cocktails" class="navbar-item">Home</a>
+          <% if @current_user %>
+          <a href="" class="navbar-item">My Kitchen</a>
+          <li class="right"><%= link_to "Logout", logout_path, method: :delete  %></li>
+          <% else %>
+          <a href="/users/new" class="navbar-item">Signup</a>
+          <a href="/login" class="navbar-item">Login</a>
+          <% end %>
         </div>
       </div>
     </nav>

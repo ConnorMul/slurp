@@ -1,0 +1,24 @@
+<div id="user-show-background" class="container-fluid">
+    <div id="profile-row" class="row">
+      <div class="col">
+        <div id="show-user-profile-container">
+          <div id="show-user-profile" class="container">
+              <div class="profile-col-headers">
+                <i class="fas fa-user-circle fa-5x"></i>
+                <br>
+                <h2 id="show-user-header-username"><%= current_user.name%></h2>
+            </div>
+              <div id="user-profile-container">
+                <div class="card-body">
+                  <p class="class-text">Email: <%= current_user.email%></p>
+                  <p class="class-text">Age: <%= current_user.age%></p>
+                </div>
+
+                <div id="profile-sessions-link" class="card-body">
+                  <%= link_to "Edit Profile", edit_user_path(current_user), class: "card-link btn btn-secondary" %>
+
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>

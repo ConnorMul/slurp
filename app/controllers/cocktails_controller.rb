@@ -1,6 +1,12 @@
 class CocktailsController < ApplicationController
 
     def search
+        if params[:search].blank?  
+            redirect_to(cocktails_path, alert: "Empty field!") and return  
+        else  
+            @parameter = params[:search].downcase 
+            @results = Cocktail.all.where("lower(drink) LIKE :search", search: "%#{@parameter}%")
+        end  
     end
     
     def index

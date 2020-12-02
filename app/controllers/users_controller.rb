@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 
         if @user.valid?
             session[:user_id] = @user.id
-            Kitchen.create(@user)
-            redirect_to kitchen_path(kitchen)
+            Kitchen.create(user: @user)
+            redirect_to kitchen_path(@user.kitchen)
         else
             flash[:user_errors] = @user.errors.full_messages
             redirect_to new_user_path

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
  
   delete 'sessions/logout', to: 'sessions#logout', as: 'logout'
   get "/login", to: 'sessions#new', as: 'new_login'
-  post '/sessions/login', to: 'sessions#login', as: 'login'
-  get '/search', to: 'cocktails#search', :as => 'search_page'
+  post '/login', to: 'sessions#login', as: 'login'
+  get '/search', to: 'cocktails#search', as: 'search_page'
+  get '/signup', to: 'users#new', as: 'signup'
 end
