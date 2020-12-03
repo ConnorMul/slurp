@@ -1,0 +1,45 @@
+<h1>Review a Drink</h1>
+
+<h3>Tell us how you liked this drink!</h3>
+
+<%= form_for @review do |f| %>
+    <%= f.label :rating %>
+<!-- <%= f.select :rating, (1..5) %></div> -->
+    <div class="rating_selection">
+
+    <%= f.radio_button :rating, 0, checked: true %> 
+    <label for="review_rating_0">
+    <span>Unrated</span></label> 
+
+    <%= f.radio_button :rating, 1 %> 
+    <label for="review_rating_1">
+    <span>Rating 1 Star</span></label>
+
+    <%= f.radio_button :rating, 2 %> 
+    <label for="review_rating_2">
+    <span>Rating 2 Star</span></label>
+
+    <%= f.radio_button :rating, 3 %> 
+    <label for="review_rating_3">
+    <span>Rating 3 Star</span></label>
+
+    <%= f.radio_button :rating, 4 %> 
+    <label for= "review_rating_4">
+    <span>Rating 4 Star</span></label>
+
+    <%= f.radio_button :rating, 5 %> 
+    <label for="review_rating_5">
+    <span>Rating 5 Star</span></label>
+
+    </div>
+
+    <div>
+    <%= f.label :content %>
+        <%= f.text_area :content, class: "form-control" %></div>
+        <%= f.hidden_field(:user_id, value: @current_user.id) %>
+        <%= f.label :cocktail %>
+        <%= f.collection_select :cocktail, Cocktail.all, :id, :name %>
+        <%= f.submit "Review", class: "btn btn-secondary", style: "margin-top: 10px;" %>
+    <% end %>
+<br>
+<div>

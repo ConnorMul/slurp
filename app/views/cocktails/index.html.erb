@@ -9,6 +9,7 @@
                 <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
                 <%= f.submit "Add to your Kitchen", class: "btn btn-primary" %>
         <% end %>
+            <%= button_to "Review This Drink", new_review_path, method: 'get' %>
         <% else %>
         <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path %></p>
         <% end %>
