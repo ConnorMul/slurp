@@ -8,6 +8,22 @@ class CocktailsController < ApplicationController
             @results = Cocktail.all.where("lower(drink) LIKE :search", search: "%#{@parameter}%")
         end  
     end
+
+    def new
+        @cocktail = Cocktail.new
+    end
+
+    def create
+        @cocktail = Cocktail.create(cocktail_params)
+
+        if @cocktail.valid?
+            @current_user.cocktails << @cocktail
+            redirect_to cocktails_path
+        else
+            flash[:ct_errors] = @cocktail.errors.full_messages
+            redirect_to new_cocktail_path
+        end
+    end
     
     def index
         @cocktails = Cocktail.all

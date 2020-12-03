@@ -1,0 +1,19 @@
+<h1>Add your own drink!</h1>
+
+<p>With this form you can add your own drink of choice to our system</p>
+<p>Just provide us with a few details about your drink below</p>
+
+<%= form_for @cocktail do |f| %>
+    <label for="drink" class="label">Drink Name</label>
+    <%= f.text_field :drink, class: "form-control" %>
+    <%= f.label :alcohol_percentage %>
+    <%= f.text_field :alcohol_percentage, class: "form-control" %>
+    <%= f.label :brand %>
+    <%= f.text_field :brand, class: "form-control" %>
+    <%= f.label :style %>
+    <%= f.text_area :style, class: "form-control" %>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control" %>
+    <br>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

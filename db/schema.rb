@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 2020_11_30_203126) do
     t.string "drink"
     t.string "alcohol_percentage"
     t.text "description"
+    t.string "brand"
+    t.string "style"
+    t.string "img_url"
     t.integer "kitchen_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,12 +44,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_203126) do
   create_table "reviews", force: :cascade do |t|
     t.string "content"
     t.integer "stars"
-    t.integer "user_id", null: false
-    t.integer "cocktail_id", null: false
+    t.integer "user_id"
+    t.integer "cocktail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cocktail_id"], name: "index_reviews_on_cocktail_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,6 +63,4 @@ ActiveRecord::Schema.define(version: 2020_11_30_203126) do
   add_foreign_key "add_cocktail_to_kitchens", "kitchens"
   add_foreign_key "cocktails", "kitchens"
   add_foreign_key "kitchens", "users"
-  add_foreign_key "reviews", "cocktails"
-  add_foreign_key "reviews", "users"
 end

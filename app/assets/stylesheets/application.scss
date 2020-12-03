@@ -21,7 +21,7 @@
   }
   
   .index-tile {
-    background-color: rgba(207, 124, 233, 0.404);
+    background-color: rgba(66, 3, 85, 0.116);
     text-align: center;
     padding: 10px;
     margin: 10px;
@@ -29,12 +29,16 @@
   }
   
   .index-tile:hover {
-    border: 3px solid rgb(95, 12, 121); 
-    background-color: rgba(130, 22, 163, 0.2);
+    border: 3px solid rgba(66, 3, 85, 0.089); 
+    background-color: rgb(237, 188, 252);
   }
   
   .index-tile h3 a {
     text-decoration: none;
     color: rgb(62, 7, 79);
     font-weight: 1200;
+  }
+
+  .index-img {
+    max-width: 150px;
   }

@@ -3,42 +3,37 @@
 <h3>Tell us how you liked this drink!</h3>
 
 <%= form_for @review do |f| %>
-    <%= f.label :rating %>
-<!-- <%= f.select :rating, (1..5) %></div> -->
+    <%= f.label :stars %>
     <div class="rating_selection">
 
-    <%= f.radio_button :rating, 0, checked: true %> 
-    <label for="review_rating_0">
-    <span>Unrated</span></label> 
-
-    <%= f.radio_button :rating, 1 %> 
+    <%= f.radio_button :stars, 1 %> 
     <label for="review_rating_1">
-    <span>Rating 1 Star</span></label>
+    <span>1 Star</span></label>
 
-    <%= f.radio_button :rating, 2 %> 
+    <%= f.radio_button :stars, 2 %> 
     <label for="review_rating_2">
-    <span>Rating 2 Star</span></label>
+    <span>2 Stars</span></label>
 
-    <%= f.radio_button :rating, 3 %> 
+    <%= f.radio_button :stars, 3 %> 
     <label for="review_rating_3">
-    <span>Rating 3 Star</span></label>
+    <span>3 Stars</span></label>
 
-    <%= f.radio_button :rating, 4 %> 
+    <%= f.radio_button :stars, 4 %> 
     <label for= "review_rating_4">
-    <span>Rating 4 Star</span></label>
+    <span>4 Stars</span></label>
 
-    <%= f.radio_button :rating, 5 %> 
+    <%= f.radio_button :stars, 5 %> 
     <label for="review_rating_5">
-    <span>Rating 5 Star</span></label>
+    <span>5 Stars</span></label>
 
     </div>
 
     <div>
     <%= f.label :content %>
         <%= f.text_area :content, class: "form-control" %></div>
-        <%= f.hidden_field(:user_id, value: @current_user.id) %>
-        <%= f.label :cocktail %>
-        <%= f.collection_select :cocktail, Cocktail.all, :id, :name %>
+        <%= f.hidden_field :user_id, value: @current_user.id  %>
+        <%= f.label :cocktail_id %>
+        <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink %>
         <%= f.submit "Review", class: "btn btn-secondary", style: "margin-top: 10px;" %>
     <% end %>
 <br>

@@ -2,16 +2,12 @@
 <div class='index-container'>
     <% @cocktails.each do |ct| %>
         <div class='index-tile'>
+        <%= image_tag ct.img_url, class: 'index-img' %>
         <p><%= link_to ct.drink, cocktail_path(ct) %></p>
         <% if @current_user %>
-         <%= form_for @current_user.kitchen do |f| %>
-                <%= f.hidden_field(:cocktail, value: ct) %>
-                <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
-                <%= f.submit "Add to your Kitchen", class: "btn btn-primary" %>
-        <% end %>
             <%= button_to "Review This Drink", new_review_path, method: 'get' %>
         <% else %>
-        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path %></p>
+        <p><%= button_to "Login/Signup to review this drink!", new_login_path %></p>
         <% end %>
         </div>
     <% end %>
