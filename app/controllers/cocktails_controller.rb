@@ -39,6 +39,11 @@ class CocktailsController < ApplicationController
 
     private
 
+    def cocktail_params
+        params.require(:cocktail).permit(:drink, :alcohol_percentage, :description)
+    end
+
+
     # def request_api(url)
     #   response = Excon.get(
     #     url,

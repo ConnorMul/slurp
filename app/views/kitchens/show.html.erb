@@ -8,11 +8,11 @@
 <% @current_user.cocktails.each do |ct| %>
     <div class='index-tile'>
     <h5><%= ct.drink %></h5>
-    <%= image_tag ct.img_url, class: 'index-img' %>
     <% ct.reviews.each do |review| %>
       <p><%= review.content %></p>
-       <p><%= review.stars %></p>
+       <p><%= review.stars %> star(s)!</p>
        <%= button_to "Delete This Review", review_path(review), method: :delete %>
+       <hr>
     <% end %>
     </div>
 <% end %>

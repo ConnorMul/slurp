@@ -7,5 +7,5 @@
     <% if @current_user %>
         <p><%= button_to "Add Drink to your Kitchen" %></p>
     <% else %>
-        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>
+        <p><%= button_to "Login/Signup to add this to your Kitchen" method: 'get' %></p>
     <% end %>
