@@ -1,13 +1,13 @@
-
-<div class='index-container'>
+   <div class='index-container'>
     <% @cocktails.each do |ct| %>
         <div class='index-tile'>
+        <%= image_tag ct.img_url, class: 'index-img' %>
         <p><%= link_to ct.drink, cocktail_path(ct) %></p>
         <% if @current_user %>
-        <a href="http://localhost:3000/reviews/new?" class="btn btn-primary">Leave a review!</a>
-        <% else %>
-        <a href="http://localhost:3000/login" class="btn btn-primary">Login/Signup to leave review!</a>
-        <% end %>
+            <a href="http://localhost:3000/reviews/new?" class="btn btn-primary">Leave a review!</a>
+            <% else %>
+            <a href="http://localhost:3000/login" class="btn btn-primary">Login/Signup to leave review!</a>
+            <% end %>
         </div>
     <% end %>
 </div>

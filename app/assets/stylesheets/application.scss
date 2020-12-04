@@ -1,20 +1,19 @@
 @import "bootstrap/scss/bootstrap";
 // @import "bulma";
 
-// body {
-//     /* background-image: url("https://i.pinimg.com/originals/2c/37/53/2c37538ad1d9a09852c9ec8638c5fa8b.png");
-//     background-repeat: no-repeat;
-//     background-size: cover; */
- 
-//     background-color: rgba(150, 250, 237, 0.4)
-//   }
+body {
+    background-image: url("/sessions.scss/");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(150, 250, 237, 0.4);
+  }
  
 .index-container {
     max-height: 100vh;
     overflow: scroll;
     display: flex;
     flex-flow: row wrap;
-    // padding: 0px 0px 0px 0px;
+    padding: 0px 10px 0px 10px;
     margin: 0px auto;
     border-radius: 25px; 
     justify-content: space-evenly;
@@ -42,3 +41,39 @@
   .index-img {
     max-width: 150px;
   }
+
+  .thumb {
+      padding: 60px 10px;
+      text-align: center;
+      background: #ddd;
+  }
+
+  .container-fluid, .container {
+      margin: 50px auto;
+      height: 200px;
+  }
+
+ a {
+     color: rgba(0, 0, 0, 0.568);
+ }
+
+ a:hover {
+    background-color: rgba(255,255,255,0.4);
+    transition: 1s;
+    text-decoration: none;
+ }
+
+ .navbar-menu {
+    text-align: right;
+    padding: 25px;
+ }
+
+ .navbar-form {
+     align-self: center;
+ }
+
+ .input-group, .input-group-btn {
+     align-self: center;
+ }
+//   @import url('https://fonts.googleapis.com/css?family=Exo+2:900');
+

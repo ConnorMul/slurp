@@ -23,6 +23,7 @@
           <span></span>
         </a>
       </div>
+      
       <%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left', action: '/search') do %>
       <div class="input-group">
       <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
@@ -34,7 +35,7 @@
   
       <div class="navbar-menu" id="nav-links">
         <div class="navbar-end">
-          <a href="/cocktails" class="navbar-item">Home</a>
+          <a href="/" class="navbar-item">Home</a>
           <% if @current_user %>
           <%= link_to "My Kitchen", @current_user.kitchen %>
           <%= link_to "NewBrew", new_cocktail_path %>
