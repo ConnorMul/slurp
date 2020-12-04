@@ -6,7 +6,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgba(150, 250, 237, 0.4);
-    background: linear-gradient(-45deg, #7db1ec, #4378da);
+    background: rgb(255, 102, 0);
   }
  
 .index-container {
@@ -21,7 +21,7 @@ body {
   }
   
   .index-tile {
-    background-color: rgba(66, 3, 85, 0.116);
+    background-color: rgba(187, 144, 5, 0.116);
     text-align: center;
     padding: 10px;
     margin: 10px;
@@ -95,3 +95,12 @@ nav a {
     width: auto;
     margin: 0px auto;
 }
+
+
+.index-img {
+  width:200px;
+  height:200px;
+
+   object-fit:scale-down
+}
+

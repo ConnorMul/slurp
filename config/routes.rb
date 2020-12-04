@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :reviews
 
-  root 'sessions#home'
+  root 'cocktails#index'
  
   delete 'sessions/logout', to: 'sessions#logout', as: 'logout'
   get "/login", to: 'sessions#new', as: 'new_login'

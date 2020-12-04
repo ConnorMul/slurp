@@ -1,34 +1,35 @@
-<h1 class='new-brew-form'>Change this review</h1>
+    <div class='new-brew-form'>
+    <h1>Change this review</h1>
 
-<%= form_for @review do |f| %>
-    <%= f.label :stars %>
-    <div class="rating_selection">
+    <%= form_for @review do |f| %>
+        <%= f.label :stars %>
+        <div class="rating_selection">
 
-    <%= f.radio_button :stars, 1 %> 
-    <label for="review_rating_1">
-    <span>⭐</span></label>
-    <br>
-    <%= f.radio_button :stars, 2 %> 
-    <label for="review_rating_2">
-    <span>⭐⭐</span></label>
-    <br>
-    <%= f.radio_button :stars, 3 %> 
-    <label for="review_rating_3">
-    <span>⭐⭐⭐</span></label>
-    <br>
-    <%= f.radio_button :stars, 4 %> 
-    <label for= "review_rating_4">
-    <span>⭐⭐⭐⭐</span></label>
-    <br>
-    <%= f.radio_button :stars, 5 %> 
-    <label for="review_rating_5">
-    <span>⭐⭐⭐⭐⭐</span></label>
+        <%= f.radio_button :stars, 1 %> 
+        <label for="review_rating_1">
+        <span>⭐</span></label>
+        <br>
+        <%= f.radio_button :stars, 2 %> 
+        <label for="review_rating_2">
+        <span>⭐⭐</span></label>
+        <br>
+        <%= f.radio_button :stars, 3 %> 
+        <label for="review_rating_3">
+        <span>⭐⭐⭐</span></label>
+        <br>
+        <%= f.radio_button :stars, 4 %> 
+        <label for= "review_rating_4">
+        <span>⭐⭐⭐⭐</span></label>
+        <br>
+        <%= f.radio_button :stars, 5 %> 
+        <label for="review_rating_5">
+        <span>⭐⭐⭐⭐⭐</span></label>
 
-    </div>
+        </div>
 
     <div>
     <%= f.label :content %>
-        <%= f.text_area :content, class: "form-control" %></div>
+        <%= f.text_area :content, class: "form-control" %></class=>
         <%= f.hidden_field :user_id, value: @current_user.id  %>
         <%= f.label :cocktail_id %>
         <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink %>

@@ -34,7 +34,7 @@
         <%= f.hidden_field :user_id, value: @current_user.id  %>
         <%= f.label :cocktail_id %>
         <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink%>
-        <%= f.submit "Review", class: "btn btn-primary", style: "margin-top: 10px;" %>
+        <%= f.submit "Review", class: "btn btn-warning", style: "margin-top: 10px;" %>
     <% end %>
 </div>
 <br>

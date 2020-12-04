@@ -1,11 +1,20 @@
-<h1><%= @cocktail.drink %>
 
-<h3><%= @cocktail.alcohol_percentage %></h3>
+<div class='new-brew-form'>
+    <%= image_tag @cocktail.img_url, class: 'index-img' %>
+    <h1><%= @cocktail.drink %>
 
-<p><%= @cocktail.description %></p>
+    <h3><strong>Percentage: </strong><%= @cocktail.alcohol_percentage %></h3>
+
+    <h5><strong>Brand: </strong><%= @cocktail.brand %></h5>
+    
+    <h6><strong>Style: </strong><%= @cocktail.style %></h6>
+
+    <p><strong>Description: </strong><%= @cocktail.description %></p>
 
     <% if @current_user %>
-        <p><%= button_to "Add Drink to your Kitchen" %></p>
+        <a href="http://localhost:3000/reviews/new?" class="btn btn-warning">Review this drink!</a>
     <% else %>
-        <p><%= button_to "Login/Signup to add this to your Kitchen" method: 'get' %></p>
+        <p><%= button_to "Login/Signup to review this drink", login_path, method: 'get' %></p>
     <% end %>
+
+</div>
