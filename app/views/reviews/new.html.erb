@@ -1,7 +1,7 @@
-<h1>Review a Drink</h1>
+<h1 class='new-brew-form'>Review a Drink</h1>
 
-<h3>Tell us how you liked this drink!</h3>
-
+<h3 class='new-brew-form'>Tell us how you liked this drink!</h3>
+<div class="form-control">
 <%= form_for @review do |f| %>
     <%= f.label :stars %>
     <div class="rating_selection">
@@ -25,16 +25,16 @@
     <%= f.radio_button :stars, 5 %> 
     <label for="review_rating_5">
     <span>⭐⭐⭐⭐⭐</span></label>
-
     </div>
 
-    <div>
+
+
     <%= f.label :content %>
-        <%= f.text_area :content, class: "form-control" %></div>
+        <%= f.text_area :content %>
         <%= f.hidden_field :user_id, value: @current_user.id  %>
         <%= f.label :cocktail_id %>
-        <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink %>
-        <%= f.submit "Review", class: "btn btn-secondary", style: "margin-top: 10px;" %>
+        <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink%>
+        <%= f.submit "Review", class: "btn btn-primary", style: "margin-top: 10px;" %>
     <% end %>
+</div>
 <br>
-<div>
