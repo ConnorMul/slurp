@@ -1,16 +1,18 @@
-<h1>Welcome to Your Kitchen</h1>
+<h1 class="kitchen-header">Welcome to Your Kitchen</h1>
 <% if @current_user.reviews.length > 0 %>
-    <h3>Here are some of your current reviews</h3>
+    <h3 class="kitchen-header">Here are some of your current reviews</h3>
 <% else %>
-    <h3>Your Reviews will show up here!</h3>
+    <h3 class="kitchen-header">Your Reviews will show up here!</h3>
 <% end %>
 <div class='index-container'>
 <% @current_user.cocktails.each do |ct| %>
     <div class='index-tile'>
+    <%= image_tag ct.img_url, class: 'index-img' %>
     <h5><%= ct.drink %></h5>
     <% ct.reviews.each do |review| %>
       <p><%= review.content %></p>
        <p><%= review.stars %> star(s)!</p>
+       <%= button_to "Edit This Review", edit_review_path(review), method: :get %>
        <%= button_to "Delete This Review", review_path(review), method: :delete %>
        <hr>
     <% end %>

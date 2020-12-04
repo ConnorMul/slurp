@@ -10,7 +10,7 @@
 # Review.destroy_all
 # AddCocktailToKitchen.destroy_all
 
-cocktail_images = [
+COCKTAIL_IMAGES = [
     "https://untappd.akamaized.net/photos/2018_05_30/4814406928c1f11ef911c8857a0fb29d_640x640.jpeg",
     "https://untappd.akamaized.net/photos/2018_05_28/338d8879f6a96d7481df678d3f509d4d_640x640.jpg",
     "https://pbs.twimg.com/media/EOBQiBvWAAA5GLv.jpg",
@@ -24,7 +24,7 @@ cocktail_images = [
 ]
 
 50.times do
-    Cocktail.create(drink: Faker::Beer.name, alcohol_percentage: Faker::Beer.alcohol, style: Faker::Beer.style, brand: Faker::Beer.brand, description: Faker::Hipster.sentence, img_url: cocktail_images.sample)
+    Cocktail.create(drink: Faker::Beer.name, alcohol_percentage: Faker::Beer.alcohol, style: Faker::Beer.style, brand: Faker::Beer.brand, description: Faker::Hipster.sentence, img_url: COCKTAIL_IMAGES.sample)
 end
 
 # 1.times do

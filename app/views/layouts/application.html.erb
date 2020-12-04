@@ -12,8 +12,8 @@
   <body>
 
     <!--Nav Bar/Logo/Links on top of page begins here! (: -->
-    <nav class="navbar has-shadow is-white">
-      <div class="navbar-brand">
+    <nav class="navbar navbar-default">
+      <div class="nav navbar-nav">
         <a href="http://localhost:3000/cocktails">
           <img src="https://www.freelogodesign.org/download/file?id=2127417c-38e2-4e52-9181-b36d1f7315b9_200x200.png" alt="Picture Broken" style="max-height: 150px" class="py-2 px-2"  >
         </a>
@@ -33,18 +33,17 @@
   </div>
 <% end %>
   
-      <div class="navbar-menu" id="nav-links">
-        <div class="navbar-end">
-          <a href="/" class="navbar-item">Home</a>
-          <% if @current_user %>
-          <%= link_to "My Kitchen", @current_user.kitchen %>
-          <%= link_to "NewBrew", new_cocktail_path %>
-          <%= link_to "BrewReview", new_review_path %>
-          <%= link_to "Logout", logout_path, method: :delete  %></li>
-          <% else %>
-          <a href="/users/new" class="navbar-item">Signup</a>
-          <a href="/login" class="navbar-item">Login</a>
-          <% end %>
+      <div class="nav navbar-nav"></div>
+          <a href="/cocktails" class="navbar-item">Home</a>
+            <% if @current_user %>
+              <%= link_to "My Kitchen", @current_user.kitchen %>
+              <%= link_to "NewBrew", new_cocktail_path %>
+              <%= link_to "BrewReview", new_review_path %>
+              <%= link_to "Logout", logout_path, method: :delete  %></li>
+            <% else %>
+              <a href="/users/new" class="navbar-item">Signup</a>
+              <a href="/login" class="navbar-item">Login</a>
+            <% end %>
         </div>
       </div>
     </nav>

@@ -3,6 +3,7 @@
    <div class='index-container'>
     <% @results.each do |result| %>
         <div class='index-tile'>
+        <%= image_tag result.img_url, class: 'index-img' %>
         <p><%= link_to result.drink, cocktail_path(result) %></p>
         <% if @current_user %>
             <%= form_for result do |f| %>
