@@ -1,25 +1,12 @@
-# README
+# Welcome to Brew!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Brew is an easy way to keep track of your favorite drinks. 
 
-Things you may want to cover:
+Brew allows you to add your own drinks, review existing drinks in our database and store those reviews in your very own "Kitchen" for future viewing and editing.
 
-* Ruby version
+To get started using Brew you can fork and clone this repository.
 
-* System dependencies
+Run 'bundle install' and then 'rails s' and navigate to the web address rails says it is listening on.
 
-* Configuration
+Brew is great because of you! Add drinks to our database to make Brew the best it can be. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# slurp
