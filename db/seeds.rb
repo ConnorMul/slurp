@@ -21,6 +21,8 @@ COCKTAIL_IMAGES = [
     "https://stmedia.stimg.co/ctyp-092320-Beer-Issue-Getty.jpg?w=1200&h=630",
     "https://i.dailymail.co.uk/1s/2019/09/16/14/18535700-0-image-a-50_1568639482087.jpg",
     "https://media.wired.com/photos/5f066bb7af3d0a069fd1d63d/1:1/w_1800,h_1800,c_limit/Gear-Homebrew-630019103.jpg",
+    "https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/beveragedaily.com/news/markets/could-coronavirus-crush-craft-beer-rabobank-podcast/10973561-1-eng-GB/Could-coronavirus-crush-craft-beer-Rabobank-podcast.jpg",
+    
 ]
 
 50.times do
