@@ -4,12 +4,12 @@
     <% end %>
 
     <%= form_for :session, url: new_login_path do |f| %>
-        <h3 class="title is-3">Login</h3>
+        <h3>Login</h3>
 
-        <label for="name" class="label">Username</label><br />
+        <label for="name">Username</label><br />
         <%= f.text_field :name %><br />
 
-        <label for="password" class="label">Password</label><br />
+        <label for="password">Password</label><br />
         <%= f.password_field :password %><br />
         <br>
         <%= f.submit "Login", class: "btn btn-warning" %>

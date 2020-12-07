@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :kitchens
-  resources :cocktails
-  resources :users, only: [:index, :show, :create, :new, :edit, :update]
-  resources :reviews
+  resources :kitchens, only: [:show, :update]
+  resources :cocktails, only: [:index, :show, :create, :new]
+  resources :users, only: [:show, :create, :new, :edit, :update]
+  resources :reviews, only: [:new, :create, :edit, :update, :destroy]
 
   root 'cocktails#index'
  
