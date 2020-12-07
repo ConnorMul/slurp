@@ -1,7 +1,19 @@
-<h3 class="new-brew-form">Here are the drinks we currently have available</h3>  
+
+<head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+
+
+<h1 class="animate__animated animate__zoomInDown">Welcome to Brew!</h1>
+
 
 <div class='index-container'>
     <% @cocktails.each do |ct| %>
+
+
         <div class='index-tile'>
         <%= image_tag ct.img_url, class: 'index-img' %>
         <p><%= link_to ct.drink, cocktail_path(ct) %></p>
