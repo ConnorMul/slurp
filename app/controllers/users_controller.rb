@@ -20,8 +20,8 @@ class UsersController < ApplicationController
             Kitchen.create(user: user)
             redirect_to kitchen_path(user.kitchen)
         else
-            flash[:errors] = user.errors.full_messages
-            redirect_to new_signup_path
+            flash[:user_errors] = user.errors.full_messages
+            redirect_to new_user_path
         end
     end
 

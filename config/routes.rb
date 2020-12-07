@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get '/search', to: 'cocktails#search', as: 'search_page'
   get '/signup', to: 'users#new', as: 'signup'
   get 'sessions/home', to: 'sessions#home', as: 'home'
+  get 'homepage/index'
 
 end

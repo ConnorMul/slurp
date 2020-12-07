@@ -55,7 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'excon'
 
-gem 'bootstrap', '~> 5.0.0.alpha3'
 
 gem 'jquery-rails'
 
@@ -66,3 +65,5 @@ gem 'faker'
 gem "shaken_not_stirred", "~> 0.0.7"
 
 gem "bulma-rails", "~> 0.9.1"
+
+gem 'bootstrap-sass', '~> 3.4.1'
