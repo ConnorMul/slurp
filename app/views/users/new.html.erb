@@ -3,13 +3,13 @@
     <div class="row">
         <div class="col">
             <div id="new-user-form-container">     
-                <div>
+                <div class="new-brew-form">
                     <% if flash[:user_errors] %>
                     <% flash[:user_errors].each do |error| %>
                     <p style="color:black;"><%=error%></p>
                     <%end%>
                     <%end%>
-                </div>
+                
                 
                 <i class="fas fa-user-plus fa-3x"></i>
                 <h1 id="new-user-header">New Drinker</h1>
@@ -22,17 +22,18 @@
                     <%= f.password_field :password, class: "form-control" %>
                     <%= f.label :email %>
                     <%= f.email_field :email, class: "form-control" %>
-                    <%= f.label :age %>
+                    <label for="age">Age (must be 21 or older to join)</label>
                     <%= f.number_field :age, class: "form-control" %>
                     <br>
                     <%= f.submit "Submit", class: "btn btn-warning" %>
                     <% end %>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col">
             <div id="new-user-picture-container">
-                <div id="new-user-text">
+                <div class="new-brew-form">
                     <h1 id="new-user-header-2">Lets find some new beers!</h1>
                     <h3 id="new-user-lead" class="lead">Please provide us with some info so we can create your account!</h3>
                 </div>

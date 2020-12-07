@@ -14,7 +14,7 @@
     <% if @current_user %>
         <a href="http://localhost:3000/reviews/new?" class="btn btn-warning">Review this drink!</a>
     <% else %>
-        <p><%= button_to "Login/Signup to review this drink", login_path, method: 'get' %></p>
+        <p><%= button_to "Login/Signup to review this drink", login_path, class: "btn btn-warning", method: 'get' %></p>
     <% end %>
 
 </div>
