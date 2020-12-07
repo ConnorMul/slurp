@@ -1,40 +1,18 @@
-<section class="her has-background-white-ter is-fullheight">
-        <div class="hero-body">
-            <div class="container">
-                <div class="columns is-centered">
-                    <div column is-5-tablet is-4-desktop is-3-widescreen>
-                       <% if flash[:errors] %>
-                        <%= flash[:errors] %>
-                        <% end %>
-                        <%= form_for :session, url: new_login_path do |f| %>
-                            <h3 class="title is-3">Login</h3>
-                            
-                            <div class="field">
-                                <label for="name" class="label">Username</label>
-                                <div class="control has-icons-left">
-                                   <%= f.text_field :name %>
-                                </div>
-                            </div>
-      
-                            <div class="field">
-                                <label for="password" class="label">Password</label>
-                                <div class="control has-icons-left">
-                                   <%= f.password_field :password %>
-                                    </span>
-                                </div>
+<div class="new-brew-form">
+    <% if flash[:errors] %>
+        <%= flash[:errors] %>
+    <% end %>
 
-                                <div class="">
-                                    <%= f.submit "Login" %>
-                                </div>
-                            </div>
+    <%= form_for :session, url: new_login_path do |f| %>
+        <h3 class="title is-3">Login</h3>
 
-                            
-                        <% end %>
+        <label for="name" class="label">Username</label><br />
+        <%= f.text_field :name %><br />
 
-                </div>
-            </div>
-        </div>
-    </section>
-    
-</body>
-</html>
+        <label for="password" class="label">Password</label><br />
+        <%= f.password_field :password %><br />
+        <br>
+        <%= f.submit "Login", class: "btn btn-warning" %>
+
+    <% end %>
+</div>

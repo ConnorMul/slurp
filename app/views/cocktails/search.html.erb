@@ -1,4 +1,4 @@
-<h3>Search Result</h3>  
+<h3 class="new-brew-form">Here are the drinks we could find that matched..</h3>  
 
    <div class='index-container'>
     <% @results.each do |result| %>
@@ -8,7 +8,7 @@
         <% if @current_user %>
             <%= form_for result do |f| %>
                 <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
-                <%= f.submit "Add to your Kitchen", class: "btn btn-primary" %>
+                <%= f.submit "Review this drink", class: "btn btn-warning" %>
             <% end %>
         <% else %>
         <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>

@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :kitchens
-  resources :add_cocktail_to_kitchens
   resources :cocktails
-  resources :users
+  resources :users, only: [:index, :show, :create, :new, :edit, :update]
   resources :reviews
 
   root 'cocktails#index'

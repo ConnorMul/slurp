@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :cocktails, through: :reviews
 
     has_secure_password
+
     validates :name, :password, :age, :email, presence: true
     validates :name, uniqueness: true
     validates :password, length: { in: 8..16 }

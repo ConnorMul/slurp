@@ -1,9 +1,13 @@
 <h1 class='new-brew-form'>Review a Drink</h1>
 
 <h3 class='new-brew-form'>Tell us how you liked this drink!</h3>
-<div class="form-control">
+<div class="new-brew-form">
 <%= form_for @review do |f| %>
-    <%= f.label :stars %>
+
+    <label for="cocktail">Which drink would you like to review?</label>
+    <br>
+    <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink%><br />
+    <label for="stars">How many stars for this drink?</label>
     <div class="rating_selection">
 
     <%= f.radio_button :stars, 1 %> 
@@ -29,11 +33,10 @@
 
 
 
-    <%= f.label :content %>
-        <%= f.text_area :content %>
+        <label for="content">How did you enjoy this drink?</label><br />
+        <%= f.text_area :content %><br />
+
         <%= f.hidden_field :user_id, value: @current_user.id  %>
-        <%= f.label :cocktail_id %>
-        <%= f.collection_select :cocktail_id, Cocktail.all, :id, :drink%>
         <%= f.submit "Review", class: "btn btn-warning", style: "margin-top: 10px;" %>
     <% end %>
 </div>
