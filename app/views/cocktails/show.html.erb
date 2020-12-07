@@ -11,6 +11,8 @@
 
     <p><strong>Description: </strong><%= @cocktail.description %></p>
 
+    <p><strong>Average BrewRating: </strong><%= @cocktail.average_star_rating %> star(s)</p>
+
     <% if @current_user %>
         <a href="http://localhost:3000/reviews/new?" class="btn btn-warning">Review this drink!</a>
     <% else %>
