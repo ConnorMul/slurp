@@ -49,8 +49,6 @@ COCKTAIL_IMAGES = [
         @cocktail = Cocktail.find(params[:id])
     end
 
-    def update
-    end
 
     private
 
