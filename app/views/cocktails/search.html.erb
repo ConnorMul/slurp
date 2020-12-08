@@ -7,12 +7,9 @@
         <%= image_tag result.img_url, class: 'index-img' %>
         <p><%= link_to result.drink, cocktail_path(result) %></p>
         <% if @current_user %>
-            <%= form_for result do |f| %>
-                <%= f.hidden_field(:kitchen, value: @current_user.kitchen) %>
-                <%= f.submit "Review this drink", class: "btn btn-warning" %>
-            <% end %>
+           <p><%= button_to "Review this drink", new_review_path, method: :get, class: 'btn btn-warning' %></p>
         <% else %>
-        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get' %></p>
+        <p><%= button_to "Login/Signup to add this to your Kitchen", new_login_path, method: 'get', class: 'btn btn-warning' %></p>
         <% end %>
         </div>
     <% end %>
